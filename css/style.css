@@ -1,0 +1,16 @@
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*,*::before,*::after{
+    box-sizing: inherit;
+}
+body{
+    font-size: 16px;
+}
+.contenedor{
+    background-color: rgb(180, 243, 54);
+    /* inline-flex Combina las propiedades de flex con inline, los siguientes contenedores con flex se colocaran al lado derecho  */
+    /* display: inline-flexbox; */
+    display: flex;
+}
