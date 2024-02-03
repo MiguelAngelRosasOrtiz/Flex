@@ -1,0 +1,82 @@
+article {
+    margin-top: 40px; /* Margen superior */
+    position: relative; /* La posicion relativa nos permite aplicar position-absolute a los elementos hijos */
+    width: 250px; /* Tamaño del article */
+    transition: all .3s ease; /* Tiempo, funcion y elementos de la transicion, crea un movimiento suave al cambiar de estado a hover */
+}
+article img:first-child{ /* firts-child selecciona el primer elemento html con la etiqueta a la que se le aplica esta pseudoclase */
+    box-shadow:  0 60px 60px -60px violet; /* Genera una sombra color violeta debajo de la tarjeta */
+    border-radius: 4px; /* Genera cierto redondeado de los bordes del elemento article */
+    object-fit: cover; 
+    width: 100%; /* Ancho de la primera imagen que está de fondo */
+    height: 400px; /* Altura de la primera imagen que está de fondo */
+}
+article img:last-child{/* Last-child selecciona el último elemento html con la etiqueta a la que se le aplica esta pseudoclase */
+    position:absolute; /* Cambia la posicion relativa a su padre     */
+    width: 200px;/* Ancho de la ultima imagen en el contenedor */
+    bottom: 0;/* posicion absoluta en la parte inferior en relacion al contenedor padre */
+    left: 0;/* Posicion absoluta en la parte izquierda en relacion al contenedor padre */
+    right: 0;/* Posicion absoluta en la parte derecha en relacion al contenedor padre */
+    margin: auto; /* Margenes automáticos para todos los lados de la imagen */
+    transform: translateY(25%);/* Traslada el elemento html en el eje Y */
+    transition: .3s ease;/* Tiempo, funcion y elementos de la transicion, crea un movimiento suave al cambiar de estado a hover */
+    opacity: 0;/* Genera opacidad en el elemento html seleccionado, un valor de cero lo desaparece por completo, admite valores entre 0 y 1 */
+    
+}
+article:hover{ /* Hover es una pseudo clase que reacciona cuando el cursor está sobre el elemento*/
+    transform: perspective(250px)
+    rotateX(10deg);
+}
+article::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, transparent 10%, rgba(0, 0, 0, 0.5)50% rgba(0, 0, 0)95%) ;
+    opacity: 0;
+    transition: all .3s ease;  
+}
+article:hover::before{
+    opacity: 1;
+}
+article:hover img:last-child{
+    opacity: 1;
+    transform: translateY(10%);
+}
+
+/*Centrado de div*/
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+section{
+    display: flex;
+    width: 600px;
+    height: 430px;
+}
+section img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+section img:hover{
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 50px;
+    justify-content: center;
+    align-items:center ;
+    padding: 50px;
+}
